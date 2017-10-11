@@ -1,0 +1,33 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <div class="jumbotron">
+        <h2><%= skill.name %></h2>
+        <hr>
+        <div class="row">
+            <div class="col-md-3 col-sm-6">
+            <% if (!skill.svg) { %>
+                <% var deviconName = skill.name.replace(/ /g, "").toLowerCase() %>
+                <i class="devicon-<%= deviconName %>-plain colored skill-icon" ></i>
+            <% } else {%>
+                <svg viewBox="0 0 128 128">
+                    <%- skill.svg %>
+                </svg>
+            <% } %>
+                <div class="caption"><h3><%= skill.name %></h3></div>
+                <a href="/skills/<%= skill._id %>/edit" class="btn btn-primary">Edit</a>
+                <form class="delete-form" action="/skills/<%= skill._id %>?_method=DELETE" method="POST">
+                    <button class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+            <div class="col-md-9 col-sm-6">
+                <p>Skill Level: <%= levelArr[skill.level] %></p>
+
+                <%# Talk about levels and type%>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<% include ../partials/footer %>

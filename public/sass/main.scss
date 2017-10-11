@@ -1,0 +1,73 @@
+@import "variables";
+@import "bootstrapOverride";
+
+// Container
+.container {
+    width: 80%;
+    min-width: $min-width;
+}
+
+.container-padding {
+    padding: 3% 30%;
+}
+
+
+// Navbar
+.navbar {
+    border-radius: 0;
+    border-width: 0;
+}
+
+// Footer
+.contact-banner {
+    background-color: $main-background-red;
+    margin-top: 1.0rem;
+    padding: 3.0rem;
+    text-align: center;
+}
+
+.social-icon {
+    border-radius: 50%;
+    padding: 1.0rem;
+    height: 3.0rem;
+    font-size: 3.0rem;
+    color: $main-text-white;
+
+    &:hover,
+    &:focus {
+        color: $main-text-active-cyan;
+    }
+}
+
+// Form
+
+form {
+    width: 40%;
+    min-width: $min-width;
+    margin: 0 auto;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 5.0rem;
+}
+
+.delete-form {
+    display: inline;
+}
+
+// Main Content
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.jumbotron {
+    text-align: center;
+}
+
+// ---Skill
+.skill-icon {
+    font-size: 10.0rem;
+}

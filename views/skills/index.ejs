@@ -1,0 +1,105 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <header class="jumbotron">
+        <h1>This is the skills page.</h1>
+        <a class="btn btn-primary" href="/skills/new">Add a New Skill</a>
+    </header>
+
+    <%# ===Opportunity to DRY up code here{Create an ejs helper js file and define them there}===%>
+    <div class="container">
+        <h3>Front-end</h3>
+        <hr>
+        <div class="row text-center">
+        <% skills.forEach(function(skill) { %>
+            <% if (skill.type === "front-end") { %>
+                <div class="col-md-2 col-sm-3 col-xs-4">
+                    <a href="/skills/<%= skill._id %>">
+                    <% if (!skill.svg) { %>
+                        <% var deviconName = skill.name.replace(/ /g, "").toLowerCase() %>
+                        <i class="devicon-<%= deviconName %>-plain colored skill-icon" ></i>
+                    <% } else {%>
+                        <svg viewBox="0 0 128 128">
+                            <%- skill.svg %>
+                        </svg>
+                    <% } %>
+                        <div class="caption"><h4><%= skill.name %></h4></div>
+                    </a>
+                </div>
+            <% } %>
+        <% }) %>
+    </div>
+    </div>
+
+    <div class="container">
+        <h3>Back-end</h3>
+        <hr>
+        <div class="row text-center">
+        <% skills.forEach(function(skill) { %>
+            <% if (skill.type === "back-end") { %>
+                <div class="col-md-2 col-sm-3 col-xs-4">
+                    <a href="/skills/<%= skill._id %>">
+                    <% if (!skill.svg) { %>
+                        <% var deviconName = skill.name.replace(/ /g, "").toLowerCase() %>
+                        <i class="devicon-<%= deviconName %>-plain colored skill-icon" ></i>
+                    <% } else {%>
+                        <svg viewBox="0 0 128 128">
+                            <%- skill.svg %>
+                        </svg>
+                    <% } %>
+                        <div class="caption"><h4><%= skill.name %></h4></div>
+                    </a>
+                </div>
+            <% } %>
+        <% }) %>
+        </div>
+    </div>
+    <div class="container">
+        <h3>General Programming</h3>
+        <hr>
+        <div class="row text-center">
+        <% skills.forEach(function(skill) { %>
+            <% if (skill.type === "general-programming") { %>
+                <div class="col-md-2 col-sm-3 col-xs-4">
+                    <a href="/skills/<%= skill._id %>">
+                    <% if (!skill.svg) { %>
+                        <% var deviconName = skill.name.replace(/ /g, "").toLowerCase() %>
+                        <i class="devicon-<%= deviconName %>-plain colored skill-icon" ></i>
+                    <% } else {%>
+                        <svg viewBox="0 0 128 128">
+                            <%- skill.svg %>
+                        </svg>
+                    <% } %>
+                        <div class="caption"><h4><%= skill.name %></h4></div>
+                    </a>
+                </div>
+            <% } %>
+        <% }) %>
+    </div>
+    </div>
+    <div class="container">
+        <h3>Workflow</h3>
+        <hr>
+        <div class="row text-center">
+        <% skills.forEach(function(skill) { %>
+            <% if (skill.type === "workflow") { %>
+                <div class="col-md-2 col-sm-3 col-xs-4">
+                    <a href="/skills/<%= skill._id %>">
+                    <% if (!skill.svg) { %>
+                        <% var deviconName = skill.name.replace(/ /g, "").toLowerCase() %>
+                        <i class="devicon-<%= deviconName %>-plain colored skill-icon" ></i>
+                    <% } else {%>
+                        <svg viewBox="0 0 128 128">
+                            <%- skill.svg %>
+                        </svg>
+                    <% } %>
+                        <div class="caption"><h4><%= skill.name %></h4></div>
+                    </a>
+                </div>
+            <% } %>
+        <% }) %>
+        </div>
+    </div>
+</div>
+
+<% include ../partials/footer %>

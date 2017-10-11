@@ -1,0 +1,30 @@
+<% include ../partials/header %>
+
+
+<div class="container container-padding">
+    <h2 class="text-center">Edit skill!</h2>
+    <form action="/skills/<%= skill._id %>?_method=PUT" method="POST">
+        <div class="form-group">
+            <input class="form-control" type="text" name="skill[name]" placeholder="name" value="<%= skill.name %>">
+        </div>
+        <div class="form-group">
+            <input class="form-control" type="text" name="skill[svg]" placeholder="svg path description" value="<%= skill.svg %>">
+        </div>
+        <div class="form-group">
+            <input class="form-control" type="number" min="0" max="7" name="skill[level]" placeholder="skill level 0-7" value="<%= skill.level %>">
+        </div>
+        <div class="form-group">
+            <label class="form-check-label"><input class="form-check-input" type="radio" name="skill[type]" value="front-end" <% if (skill.type === "front-end") { %> checked <% } %>> Front-end</label>
+            <label class="form-check-label"><input class="form-check-input" type="radio" name="skill[type]" value="back-end" <% if (skill.type === "back-end") { %> checked <% } %>> Back-end</label>
+            <label class="form-check-label"><input class="form-check-input" type="radio" name="skill[type]" value="data-viz" <% if (skill.type === "data-viz") { %> checked <% } %>> Data-viz</label>
+            <label class="form-check-label"><input class="form-check-input" type="radio" name="skill[type]" value="full-stack" <% if (skill.type === "full-stack") { %> checked <% } %>> Full-stack</label>
+            <label class="form-check-label"><input class="form-check-input" type="radio" name="skill[type]" value="general-programming" <% if (skill.type === "general-programming") { %> checked <% } %>> General-programming</label>
+            <label class="form-check-label"><input class="form-check-input" type="radio" name="skill[type]" value="workflow" <% if (skill.type === "workflow") { %> checked <% } %>> Workflow</label>
+        </div>
+        <button class="btn btn-primary btn-block btn-lg">Submit</button>
+    </form>
+    <a href="/skills/<%= skill._id %>" class="btn btn-default">Go Back!</a>
+</div>
+
+
+<% include ../partials/footer %>
