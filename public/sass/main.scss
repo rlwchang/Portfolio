@@ -24,14 +24,18 @@ img {
     padding: 3% 30%;
 }
 
-.container__icon--100 {
-    height: auto;
-    width: 100px;
+@for $i from 1 through 12 {
+    .col-xsm-#{$i} {
+        @media (min-width: 368px) and (max-width: 767px) {
+            width: 100% * ($i/12);
+        }
+    }
 }
 
-.container__icon--200 {
-    height: auto;
-    width: 200px;
+.col-xsm-6 {
+    @media (min-width: 368px) and (max-width: 767px) {
+        width: 50%
+    }
 }
 
 // Navbar

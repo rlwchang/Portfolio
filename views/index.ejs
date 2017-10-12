@@ -1,34 +1,38 @@
 <% include partials/header.ejs %>
 
 <div class="container">
-    <div class="content">
-        <h2>About Me</h2>
-        <hr>
-        <div class="container__icon--200">
-            <img src="/images/profilePic.jpg" alt="Profile Picture">
+    <h2>About Me</h2>
+    <hr>
+        <div class="row">
+            <div class="col-xs-12 col-xsm-6 col-sm-3">
+                <img src="/images/profilePic.jpg" alt="Profile Picture">
+            </div>
+            <div class="col-xs-12 col-xsm-6 col-sm-9">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In quis sem velit. Mauris a feugiat metus, a molestie enim. Phasellus faucibus turpis vel ultrices vehicula. Donec lacinia suscipit mi vitae tempor. Proin imperdiet, leo ullamcorper venenatis interdum, ipsum dui pharetra risus, sit amet lacinia nisl tortor id neque. Nulla vitae risus eget ligula auctor malesuada et ac nulla. Aliquam sit amet ullamcorper metus. Fusce egestas vel metus a viverra. Proin imperdiet commodo ante, in tincidunt lorem pellentesque ut. Donec volutpat lectus mi, eget volutpat nunc iaculis ut. Vestibulum feugiat, sem dignissim gravida vestibulum, leo erat bibendum risus, at congue velit turpis eget lacus. Proin viverra erat a lacinia efficitur. Ut a tristique elit. Morbi ipsum augue, elementum vel lacus in, finibus scelerisque magna. Donec nec rhoncus augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
         </div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In quis sem velit. Mauris a feugiat metus, a molestie enim. Phasellus faucibus turpis vel ultrices vehicula. Donec lacinia suscipit mi vitae tempor. Proin imperdiet, leo ullamcorper venenatis interdum, ipsum dui pharetra risus, sit amet lacinia nisl tortor id neque. Nulla vitae risus eget ligula auctor malesuada et ac nulla. Aliquam sit amet ullamcorper metus. Fusce egestas vel metus a viverra. Proin imperdiet commodo ante, in tincidunt lorem pellentesque ut. Donec volutpat lectus mi, eget volutpat nunc iaculis ut. Vestibulum feugiat, sem dignissim gravida vestibulum, leo erat bibendum risus, at congue velit turpis eget lacus. Proin viverra erat a lacinia efficitur. Ut a tristique elit. Morbi ipsum augue, elementum vel lacus in, finibus scelerisque magna. Donec nec rhoncus augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </div>
-    <div class="content">
-        <h2>Education</h2>
-        <ul>
-            <li>
-                <div class="inline-block container__icon--100">
-                    <img src="/images/profileMIT.jpg" alt="MIT Logo">
-                </div>
 
-                <div class="inline-block">
-                    <h3 class="no-margin-top">MIT</h3>
-                    <p>2012-2017</p>
-                    <p>B.S. in Chemistry and Biology</p>
-                </div>
-            </li>
-        </ul>
-    </div>
-    <div class="content">
+
+
+
+
+
+        <h2>Education</h2>
+        <hr>
+        <div class="row">
+            <div class="col-sm-6 col-xsm-4 col-md-3">
+                <img src="/images/profileMIT.jpg" alt="MIT Logo">
+            </div>
+            <div class="col-sm-6 col-xsm-8 col-md-9">
+                <h3 class="no-margin-top">MIT</h3>
+                <p>2012-2017</p>
+                <p>B.S. in Chemistry and Biology</p>
+            </div>
+        </div>
+
         <h2>Experiences</h2>
         <hr>
-    </div>
+
 </div>
 
 <% include partials/footer.ejs %>
