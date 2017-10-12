@@ -3,7 +3,9 @@
 <div class="container">
     <header class="jumbotron">
         <h1>This is the Projects page.</h1>
-        <a class="btn btn-primary" href="/projects/new">Add a New Project</a>
+        <% if (currentUser) { %>
+            <a class="btn btn-primary" href="/projects/new">Add a New Project</a>
+        <% } %>
     </header>
 
     <%# ===Opportunity to DRY up code here{Create an ejs helper js file and define them there}===%>

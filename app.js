@@ -53,6 +53,10 @@ app.listen(3000, function() {
     console.log("Server has started!");
 });
 
+app.listen(process.env.PORT || 3000, function() {
+    console.log("Server has started!");
+});
+
 // Finish description section for the skills part
 // Add ability to add multiple skills at once and populate the show and edit page with them.
 // Finish home page

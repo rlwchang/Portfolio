@@ -3,7 +3,9 @@
 <div class="container">
     <header class="jumbotron">
         <h1>This is the skills page.</h1>
-        <a class="btn btn-primary" href="/skills/new">Add a New Skill</a>
+        <% if (currentUser) { %>
+            <a class="btn btn-primary" href="/skills/new">Add a New Skill</a>
+        <% } %>
     </header>
 
     <%# ===Opportunity to DRY up code here{Create an ejs helper js file and define them there}===%>

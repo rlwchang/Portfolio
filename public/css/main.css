@@ -129,7 +129,7 @@ img {
   min-width: 300px; }
 
 .container-padding {
-  padding: 3% 30%; }
+  padding: 3% 0; }
 
 @media (min-width: 368px) and (max-width: 767px) {
   .col-xsm-1 {
