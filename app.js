@@ -15,7 +15,8 @@ var projectRoutes = require("./routes/projects");
 var skillRoutes = require("./routes/skills");
 var authentificationRoutes = require("./routes/authentification");
 
-mongoose.connect("mongodb://localhost/portfolio", {useMongoClient: true})
+var url = process.env.DATABASEURL || "mongodb://localhost/portfolio";
+mongoose.connect(url, {useMongoClient: true});
 
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
@@ -53,7 +54,7 @@ app.listen(3000, function() {
     console.log("Server has started!");
 });
 
-app.listen(process.env.PORT || 3000, function() {
+app.listen(process.env.PORT || 3000, process.env.IP, function() {
     console.log("Server has started!");
 });
 
