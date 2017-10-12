@@ -115,12 +115,29 @@
   color: #ccc;
   white-space: nowrap; }
 
+a {
+  color: #333333; }
+  a:hover, a:active {
+    text-decoration: none;
+    color: #dd7700; }
+
+img {
+  width: 100%; }
+
 .container {
   width: 80%;
   min-width: 300px; }
 
 .container-padding {
   padding: 3% 30%; }
+
+.container__icon--100 {
+  height: auto;
+  width: 100px; }
+
+.container__icon--200 {
+  height: auto;
+  width: 200px; }
 
 .navbar {
   border-radius: 0;
@@ -159,6 +176,13 @@ textarea {
 
 .jumbotron {
   text-align: center; }
+
+.inline-block {
+  vertical-align: top;
+  display: inline-block; }
+
+.no-margin-top {
+  margin-top: 0; }
 
 .skill-icon {
   font-size: 10.0rem; }

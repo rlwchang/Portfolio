@@ -4,13 +4,18 @@ var express = require("express"),
 var Project = require("../models/project"),
     Skill = require("../models/skill")
 
+var helper = require("../middleware/ejs_helper");
+
 // INDEX ROUTE
 router.get("/", function(req, res) {
     Project.find({}, function(err, projects) {
         if (err) {
             console.log(err);
         } else {
-            res.render("projects/index", {projects: projects});
+            res.render("projects/index", {
+                projects: projects,
+                _: helper
+            });
         }
     })
 });
@@ -50,11 +55,11 @@ router.get("/:id", function(req, res) {
 
 // UPDATE ROUTE
 router.put("/:id", function(req, res) {
-    Project.findByIdAndUpdate(req.paras.id, function(err, project) {
+    Project.findByIdAndUpdate(req.params.id, req.body.project, function(err, project) {
         if (err) {
             console.log(err);
         } else {
-            res.redirect("/projects/" + "req.params.id");
+            res.redirect("/projects/" + req.params.id);
         }
     })
 })

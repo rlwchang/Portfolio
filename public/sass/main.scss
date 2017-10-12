@@ -1,6 +1,19 @@
 @import "variables";
 @import "bootstrapOverride";
 
+// Global Styles
+a {
+    color: $main-text-gray;
+    &:hover, &:active {
+        text-decoration: none;
+        color: $main-text-darkorange;
+    }
+}
+
+img {
+    width: 100%;
+}
+
 // Container
 .container {
     width: 80%;
@@ -11,6 +24,15 @@
     padding: 3% 30%;
 }
 
+.container__icon--100 {
+    height: auto;
+    width: 100px;
+}
+
+.container__icon--200 {
+    height: auto;
+    width: 200px;
+}
 
 // Navbar
 .navbar {
@@ -65,6 +87,19 @@ textarea {
 
 .jumbotron {
     text-align: center;
+}
+
+// .content:nth-of-type(2n+1) {
+//     background-color: $main-background-lightyellow;
+// }
+
+.inline-block {
+    vertical-align: top;
+    display: inline-block;
+}
+
+.no-margin-top {
+    margin-top: 0;
 }
 
 // ---Skill

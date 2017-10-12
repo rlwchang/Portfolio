@@ -3,15 +3,19 @@ var express = require("express"),
 
 var Skill = require("../models/skill")
 
-var levelArr = ["No Experience", "Beginner", "Beginner/Intermediate", "Intermediate", "Intermediate/Advanced", "Advanced", "Expert", "Master"]
-
+var helper = require("../middleware/ejs_helper");
+var levelArr = ["No Experience", "Beginner", "Experienced Beginner", "Intermediate", "Advanced", "Expert", "Master"]
 // INDEX ROUTE
 router.get("/", function(req, res) {
     Skill.find({}, function(err, skills) {
         if(err) {
             console.log(err);
         } else {
-            res.render("skills/index", {skills: skills});
+            res.render("skills/index", {
+                skills: skills,
+                _ : helper
+            }
+            );
         }
     });
 });
@@ -60,7 +64,7 @@ router.put("/:id", function(req, res) {
         if (err) {
             console.log(err);
         } else {
-            res.redirect("/skills" + req.params.id);
+            res.redirect("/skills/" + req.params.id);
         }
     });
 });

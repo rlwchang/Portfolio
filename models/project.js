@@ -6,7 +6,8 @@ var projectSchema = new mongoose.Schema({
     url: String,
     type: String,
     tag: Array,
-    description: String
+    description: String,
+    features: Array
 });
 
 module.exports = mongoose.model("Project", projectSchema);
