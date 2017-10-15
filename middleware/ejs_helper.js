@@ -8,7 +8,9 @@ var helpers = {
         "general-programming" : "General Programming",
         workflow: "Workflow"
     },
+    levelArr: ["No Experience", "Beginner", "Experienced Beginner", "Intermediate", "Advanced", "Expert", "Master"],
     compare: (a, b) => a === b,
+    toLowerAndNoSpace: (str) => str.replace(/ /gi, "-").toLowerCase()
 
 }
 

@@ -1,10 +1,10 @@
 var middlewareObj = {
     isLoggedIn: function(req, res, next) {
-        if (req.isAuthenticated()) {
+        // if (req.isAuthenticated()) {
             return next();
-        } else {
-            res.redirect("/login");
-        }
+        // } else {
+        //     res.redirect("/login");
+        // }
     },
 }
 

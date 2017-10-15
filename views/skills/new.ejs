@@ -14,12 +14,13 @@
             <input class="form-control" type="number" min="0" max="6" name="skill[level]" placeholder="skill level 0-6">
         </div>
         <div class="form-group">
-            <label class="form-check-label"><input class="form-check-input" type="radio" name="skill[type]" value="front-end"> Front-end</label>
-            <label class="form-check-label"><input class="form-check-input" type="radio" name="skill[type]" value="back-end"> Back-end</label>
-            <label class="form-check-label"><input class="form-check-input" type="radio" name="skill[type]" value="data-viz"> Data-viz</label>
-            <label class="form-check-label"><input class="form-check-input" type="radio" name="skill[type]" value="full-stack"> Full-stack</label>
-            <label class="form-check-label"><input class="form-check-input" type="radio" name="skill[type]" value="general-programming"> General-programming</label>
-            <label class="form-check-label"><input class="form-check-input" type="radio" name="skill[type]" value="workflow"> Workflow</label>
+            <% _.categories.forEach(function(category) { %>
+                <label class="form-check-label"><input class="form-check-input" type="radio" name="skill[type]" value="<%= category %>"> <%= _.fullName[category] %></label>
+            <% }) %>
+        </div>
+        <div class="form-group">
+            <label for="project-features">Abilities</label>
+            <textarea id="project-features" name="skill[abilities]" rows="8" placeholder="Enter abilities separated by lines"></textarea>
         </div>
         <button class="btn btn-primary btn-block btn-lg">Submit</button>
     </form>

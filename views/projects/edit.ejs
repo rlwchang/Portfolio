@@ -13,15 +13,26 @@
             <input class="form-control" type="text" name="project[url]" placeholder="project url" value="<%= project.url %>">
         </div>
         <div class="form-group">
-            <label class="form-check-label"><input class="form-check-input" type="radio" name="project[type]" value="front-end"> Front-end</label>
-            <label class="form-check-label"><input class="form-check-input" type="radio" name="project[type]" value="back-end"> Back-end</label>
-            <label class="form-check-label"><input class="form-check-input" type="radio" name="project[type]" value="data-viz"> Data-viz</label>
-            <label class="form-check-label"><input class="form-check-input" type="radio" name="project[type]" value="full-stack"> Full-stack</label>
+            <div class="form-group">
+                <% _.categories.forEach(function(category) { %>
+                    <label class="form-check-label"><input class="form-check-input" type="radio" name="skill[type]" value="<%= category %>" <% if (project.type === category) { %> checked <% } %>> <%= _.fullName[category] %></label>
+                <% }) %>
+            </div>
         </div>
         <div class="form-group">
             <% skills.forEach(function(skill) { %>
-                <label class="form-check-label"><input class="form-check-input" type="checkbox" name="project[tag]" value="<%= skill.name.replace(/ /gi, "-").toLowerCase() %>"> <%= skill.name %></label>
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" name="project[tag]" value="<%= _.toLowerAndNoSpace(skill.name) %>"
+                    <% if (project.tag.indexOf(_.toLowerAndNoSpace(skill.name)) > -1) { %> checked <% } %>
+                    > <%= skill.name %>
+                </label>
             <% }) %>
+        </div>
+        <div class="form-group">
+            <label for="project-description">Description</label>
+            <textarea id="project-description" name="project[description]" rows="2" placeholder="Please enter a brief description of the project"><%= project.description %></textarea>
+            <label for="project-features">Features</label>
+            <textarea id="project-features" name="project[features]" rows="8" placeholder="Enter features separated by lines"><%= project.features.join("\r\n") %></textarea>
         </div>
         <button class="btn btn-primary btn-block btn-lg">Submit</button>
     </form>

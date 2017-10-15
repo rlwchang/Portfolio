@@ -38,6 +38,13 @@ img {
     }
 }
 
+// MediaQuery
+.no-display-when-small {
+    @media (max-width: 767px) {
+        display: none;
+    }
+}
+
 // Navbar
 .navbar {
     border-radius: 0;
@@ -76,6 +83,7 @@ form {
 textarea {
     resize: vertical;
     min-height: 5.0rem;
+    width: 100%;
 }
 
 .delete-form {
@@ -106,7 +114,26 @@ textarea {
     margin-top: 0;
 }
 
+// ---Project
+.left-align {
+    text-align: left;
+}
+
+.list-indent {
+    list-style-type: square;
+    list-style-position: outside;
+    margin-left: 15px;
+}
+
+.line-less-margin {
+    margin: 1rem 0
+}
+
 // ---Skill
 .skill-icon {
     font-size: 10.0rem;
+}
+
+.more-margin-bottom {
+    margin-bottom: 3.0rem;
 }

@@ -14,15 +14,22 @@
                     <%- skill.svg %>
                 </svg>
             <% } %>
-                <div class="caption"><h3><%= skill.name %></h3></div>
+                <div class="caption no-display-when-small"><h3><%= skill.name %></h3></div>
                 <a href="/skills/<%= skill._id %>/edit" class="btn btn-primary">Edit</a>
                 <form class="delete-form" action="/skills/<%= skill._id %>?_method=DELETE" method="POST">
                     <button class="btn btn-danger">Delete</button>
                 </form>
             </div>
-            <div class="col-md-9 col-sm-6">
-                <p>Skill Level: <%= levelArr[skill.level] %></p>
-
+            <div class="col-md-7 col-md-offset-2 col-sm-6">
+                <h3 class="more-margin-bottom">Skill Level: <%= _.levelArr[skill.level] %></h3>
+                <div>
+                    <h3>Abilities</h3>
+                    <ul class="left-align">
+                        <% skill.abilities.forEach(function(ability) { %>
+                            <li><%= ability %></li>
+                        <% }) %>
+                    </ul>
+                </div>
                 <%# Talk about levels and type%>
             </div>
         </div>

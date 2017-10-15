@@ -27,13 +27,17 @@ router.get("/new", authMiddleware.isLoggedIn, function(req, res) {
         if (err) {
             console.log(err);
         } else {
-            res.render("projects/new", {skills: skills});
+            res.render("projects/new", {
+                skills: skills,
+                _: helper
+            });
         }
     });
 })
 
 // CREATE ROUTE
 router.post("/", authMiddleware.isLoggedIn, function(req, res) {
+    req.body.project.features = req.body.project.features.split("\r\n");
     Project.create(req.body.project, function(err, project) {
         if (err) {
             console.log(err);
@@ -56,6 +60,7 @@ router.get("/:id", function(req, res) {
 
 // UPDATE ROUTE
 router.put("/:id", authMiddleware.isLoggedIn, function(req, res) {
+    req.body.project.features = req.body.project.features.split("\r\n");
     Project.findByIdAndUpdate(req.params.id, req.body.project, function(err, project) {
         if (err) {
             console.log(err);
@@ -77,7 +82,8 @@ router.get("/:id/edit", authMiddleware.isLoggedIn, function(req, res) {
                 } else {
                     res.render("projects/edit", {
                         project: project,
-                        skills: skills
+                        skills: skills,
+                        _: helper
                     });
                 }
             });

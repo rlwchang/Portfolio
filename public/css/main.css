@@ -183,6 +183,10 @@ img {
   .col-xsm-6 {
     width: 50%; } }
 
+@media (max-width: 767px) {
+  .no-display-when-small {
+    display: none; } }
+
 .navbar {
   border-radius: 0;
   border-width: 0; }
@@ -209,7 +213,8 @@ form {
 
 textarea {
   resize: vertical;
-  min-height: 5.0rem; }
+  min-height: 5.0rem;
+  width: 100%; }
 
 .delete-form {
   display: inline; }
@@ -228,5 +233,19 @@ textarea {
 .no-margin-top {
   margin-top: 0; }
 
+.left-align {
+  text-align: left; }
+
+.list-indent {
+  list-style-type: square;
+  list-style-position: outside;
+  margin-left: 15px; }
+
+.line-less-margin {
+  margin: 1rem 0; }
+
 .skill-icon {
   font-size: 10.0rem; }
+
+.more-margin-bottom {
+  margin-bottom: 3.0rem; }

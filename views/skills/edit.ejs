@@ -14,12 +14,13 @@
             <input class="form-control" type="number" min="0" max="6" name="skill[level]" placeholder="skill level 0-6" value="<%= skill.level %>">
         </div>
         <div class="form-group">
-            <label class="form-check-label"><input class="form-check-input" type="radio" name="skill[type]" value="front-end" <% if (skill.type === "front-end") { %> checked <% } %>> Front-end</label>
-            <label class="form-check-label"><input class="form-check-input" type="radio" name="skill[type]" value="back-end" <% if (skill.type === "back-end") { %> checked <% } %>> Back-end</label>
-            <label class="form-check-label"><input class="form-check-input" type="radio" name="skill[type]" value="data-viz" <% if (skill.type === "data-viz") { %> checked <% } %>> Data-viz</label>
-            <label class="form-check-label"><input class="form-check-input" type="radio" name="skill[type]" value="full-stack" <% if (skill.type === "full-stack") { %> checked <% } %>> Full-stack</label>
-            <label class="form-check-label"><input class="form-check-input" type="radio" name="skill[type]" value="general-programming" <% if (skill.type === "general-programming") { %> checked <% } %>> General-programming</label>
-            <label class="form-check-label"><input class="form-check-input" type="radio" name="skill[type]" value="workflow" <% if (skill.type === "workflow") { %> checked <% } %>> Workflow</label>
+            <% _.categories.forEach(function(category) { %>
+                <label class="form-check-label"><input class="form-check-input" type="radio" name="skill[type]" value="<%= category %>" <% if (skill.type === category) { %> checked <% } %>> <%= _.fullName[category] %></label>
+            <% }) %>
+        </div>
+        <div class="form-group">
+            <label for="project-features">Abilities</label>
+            <textarea id="project-features" name="skill[abilities]" rows="8" placeholder="Enter abilities separated by lines"><%= skill.abilities.join("\r\n") %></textarea>
         </div>
         <button class="btn btn-primary btn-block btn-lg">Submit</button>
     </form>

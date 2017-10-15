@@ -50,13 +50,16 @@ app.use("/skills", skillRoutes);
 
 
 
-app.listen(3000, function() {
+app.listen(process.env.PORT || 3000, function() {
     console.log("Server has started!");
 });
+//
+// app.listen(process.env.PORT || 3000, process.env.IP, function() {
+//     console.log("Server has started!");
+// });
 
-app.listen(process.env.PORT || 3000, process.env.IP, function() {
-    console.log("Server has started!");
-});
+
+// Reinstate add new button and the login middleware
 
 // Finish description section for the skills part
 // Add ability to add multiple skills at once and populate the show and edit page with them.
